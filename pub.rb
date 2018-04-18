@@ -1,11 +1,12 @@
 class Pub
 
-  attr_reader(:name, :till, :drinks)
+  attr_reader(:name, :till)
+  attr_accessor(:stock)
 
-  def initialize(name, drinks)
+  def initialize(name, stock)
     @name = name
     @till = 0
-    @drinks = drinks
+    @stock = stock
   end
 
   def add_money(drink)
