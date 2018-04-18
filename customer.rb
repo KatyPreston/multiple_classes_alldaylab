@@ -26,4 +26,13 @@ class Customer
     @wallet -= drink.price
   end
 
+  def buy_drink(pub, drink)
+    return if pub.check_drunk(self)
+    if can_afford(drink) && pub.check_age(self)
+      subtract(drink)
+      add_drunk(drink)
+      pub.add_money(drink)
+    end
+  end
+
 end

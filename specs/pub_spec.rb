@@ -31,6 +31,7 @@ class PubTest < MiniTest::Test
      assert_equal(2, @pub.till)
    end
 
+
    def test_check_age__false
      assert_equal(false, @pub.check_age(@customer1))
    end
