@@ -71,4 +71,23 @@ class CustomerTest < MiniTest::Test
      assert_equal(0, @pub.till)
    end
 
+   def test_add_rejuvenation
+     @customer.add_rejuvenation(@stock[:aliments][0])
+     assert_equal(-2, @customer.drunk_level)
+   end
+
+   def test_buy_food__true
+     @customer.buy_food(@pub, @stock[:aliments][0])
+     assert_equal(1, @customer.wallet)
+     assert_equal(-2, @customer.drunk_level)
+     assert_equal(3, @pub.till)
+   end
+
+   def test_buy_food__false
+     @customer.buy_food(@pub, @stock[:aliments][1])
+     assert_equal(4, @customer.wallet)
+     assert_equal(0, @customer.drunk_level)
+     assert_equal(0, @pub.till)
+   end
+
  end

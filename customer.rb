@@ -35,4 +35,16 @@ class Customer
     end
   end
 
+  def add_rejuvenation(food)
+    @drunk_level += food.rejuvenation
+  end
+
+  def buy_food(pub, food)
+    if can_afford(food)
+      subtract(food)
+      add_rejuvenation(food)
+      pub.add_money(food)
+    end
+  end
+
 end
