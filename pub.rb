@@ -20,4 +20,12 @@ class Pub
     end
   end
 
+  def check_drunk(customer)
+    if customer.drunk_level >= 10
+      return true
+    else
+      return false
+    end
+  end
+
 end
