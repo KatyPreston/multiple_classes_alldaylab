@@ -29,4 +29,12 @@ class Pub
     end
   end
 
+  def drinks_value
+    total = 0
+    for drink in @stock[:drinks]
+      total += drink.price
+    end
+    return total
+  end
+
 end

@@ -51,5 +51,8 @@ class PubTest < MiniTest::Test
      assert_equal(false, @pub.check_drunk(@customer2))
    end
 
+   def test_drinks_total_value
+     assert_equal(5, @pub.drinks_value)
+   end
 
 end
