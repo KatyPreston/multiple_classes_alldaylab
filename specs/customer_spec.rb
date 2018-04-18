@@ -3,6 +3,7 @@ require("minitest/rg")
 require_relative("../drink")
 require_relative("../customer")
 require_relative("../pub")
+require_relative("../food")
 
 class CustomerTest < MiniTest::Test
 
