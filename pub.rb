@@ -63,4 +63,12 @@ class Pub
    return total = one_stock(drinks) + one_stock(aliments)
   end
 
+  def display_menu(aliments_or_drinks)
+    menu = []
+    for food_or_drink in aliments_or_drinks
+      menu.unshift("We have a #{food_or_drink.name} for #{food_or_drink.price} pounds")
+    end
+    return menu
+  end
+
 end

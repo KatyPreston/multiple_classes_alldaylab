@@ -73,4 +73,12 @@ class PubTest < MiniTest::Test
      assert_equal(15, @pub.stock_value(@stock[:drinks], @stock[:aliments]))
    end
 
+   def test_food_menu
+     assert_equal(2, @pub.display_menu(@stock[:aliments]).length)
+   end
+
+   def test_drink_menu
+     assert_equal(2, @pub.display_menu(@stock[:drinks]).length)
+   end
+
 end
