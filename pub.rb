@@ -29,24 +29,38 @@ class Pub
     end
   end
 
-  def drinks_value
-    total = 0
-    for drink in @stock[:drinks]
-      total += drink.price
+  # BEFORE REFACTORING
+  # def drinks_value
+  #   total = 0
+  #   for drink in @stock[:drinks]
+  #     total += drink.price
+  #   end
+  #   return total
+  # end
+  #
+  # def aliments_value
+  #   total = 0
+  #   for food in @stock[:aliments]
+  #     total += food.price
+  #   end
+  #   return total
+  # end
+  #
+  # def stock_value
+  # return total = self.aliments_value + self.drinks_value
+  # end
+  #
+
+  def one_stock(aliments_or_drinks)
+    total= 0
+    for food_or_drink in aliments_or_drinks
+      total += food_or_drink.price
     end
     return total
   end
 
-  def aliments_value
-    total = 0
-    for food in @stock[:aliments]
-      total += food.price
-    end
-    return total
-  end
-
-  def stock_value
-   return total = self.aliments_value + self.drinks_value
+  def stock_value(drinks, aliments)
+   return total = one_stock(drinks) + one_stock(aliments)
   end
 
 end

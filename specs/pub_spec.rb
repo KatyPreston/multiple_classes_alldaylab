@@ -51,16 +51,26 @@ class PubTest < MiniTest::Test
      assert_equal(false, @pub.check_drunk(@customer2))
    end
 
-   def test_drinks_total_value
-     assert_equal(5, @pub.drinks_value)
+   # def test_drinks_total_value
+   #   assert_equal(5, @pub.drinks_value)
+   # end
+   #
+   # def test_aliments_total_value
+   #   assert_equal(10, @pub.aliments_value)
+   # end
+   #
+
+
+   def test_total_value_stock__drinks
+     assert_equal(5, @pub.one_stock(@stock[:drinks]))
    end
 
-   def test_aliments_total_value
-     assert_equal(10, @pub.aliments_value)
+   def test_total_value_stock__food
+     assert_equal(10, @pub.one_stock(@stock[:aliments]))
    end
 
    def test_total_value_stock
-     assert_equal(15, @pub.stock_value)
+     assert_equal(15, @pub.stock_value(@stock[:drinks], @stock[:aliments]))
    end
 
 end
