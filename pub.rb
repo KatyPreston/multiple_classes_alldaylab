@@ -37,4 +37,16 @@ class Pub
     return total
   end
 
+  def aliments_value
+    total = 0
+    for food in @stock[:aliments]
+      total += food.price
+    end
+    return total
+  end
+
+  def stock_value
+   return total = self.aliments_value + self.drinks_value
+  end
+
 end

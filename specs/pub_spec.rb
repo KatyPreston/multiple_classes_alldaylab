@@ -55,4 +55,12 @@ class PubTest < MiniTest::Test
      assert_equal(5, @pub.drinks_value)
    end
 
+   def test_aliments_total_value
+     assert_equal(10, @pub.aliments_value)
+   end
+
+   def test_total_value_stock
+     assert_equal(15, @pub.stock_value)
+   end
+
 end
